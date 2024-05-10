@@ -6,10 +6,21 @@
 
 namespace fuse{
     static bool is_running = true;
+    static float deltatime, last_tick;
+
     FUSE_API bool on_quit(const quit_event&){
         return is_running = false;
     }
+    
+    FUSE_INLINE void compute_deltatime(){
+        deltatime = get_ticks() - last_tick;
+        if(deltatime > MAX_DELTATIME){
+            deltatime = MAX_DELTATIME;
+        }
+        last_tick = get_ticks();
+    }
     FUSE_API void run_application(const app_config& config){
+        last_tick = get_ticks();
         //init SDL
         if(SDL_Init(SDL_INIT_EVERYTHING) < 0){
             FUSE_ERROR("%s", SDL_GetError);
@@ -57,9 +68,10 @@ namespace fuse{
         scene->start();
 
         while(is_running){
+            compute_deltatime();
             inputs::dispatch_evnets();
             SDL_RenderClear(renderer);
-            scene->update(0.016666666);
+            scene->update(deltatime);
             SDL_RenderPresent(renderer);
         }
 
