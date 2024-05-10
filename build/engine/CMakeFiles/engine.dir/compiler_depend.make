@@ -404,6 +404,7 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: engine/CMakeFiles/eng
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/text_renderer_system.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/tilemap_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/events/system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/vec2.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.cpp \
@@ -1237,6 +1238,8 @@ C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/scene.h:
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/system.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_renderer_system.h:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/tilemap_renderer_system.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/vec2.h:
 
