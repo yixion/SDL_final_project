@@ -25,6 +25,6 @@ namespace fuse::ecs
         FUSE_INLINE animation_component()=default;
         SDL_RendererFlip flip = SDL_FLIP_NONE;
         asset_id animation = INVALID_ID;
-    }
+    };
     
 } // namespace fuse:ecs

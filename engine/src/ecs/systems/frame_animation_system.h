@@ -9,7 +9,7 @@ namespace fuse::ecs
         for(auto& e:view<animation_component>()){
             //get components
             auto& tr = e.get_component<transform_component>();
-            auto& sp = e.get_component<sprite_component>();
+            auto& an = e.get_component<animation_component>();
             
             //get animation from asset registry
             auto& anim = _assets->get<animation_asset>(an.animation)->instance;
@@ -21,11 +21,11 @@ namespace fuse::ecs
             //define target viewport
             SDL_FRect dst{
                 tr.translate.x, tr.translate.y,
-                sprite.width * tr.scale.x, sprite.height * tr.scale.y
+                frame.width * tr.scale.x, frame.height * tr.scale.y
             };
 
             //render sprite
-            SDL_RenderCopyExF(_renderer, sprite.data, NULL, &dst, tr.rotation, NULL, sp.flip);
+            SDL_RenderCopyExF(_renderer, frame.data, NULL, &dst, tr.rotation, NULL, an.flip);
 
         }
        }

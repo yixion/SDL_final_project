@@ -401,6 +401,7 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: engine/CMakeFiles/eng
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/registry.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/scene.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/system.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/text_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/events/system.h \
@@ -482,6 +483,8 @@ C:/Users/USER/Documents/final_project/fuse2d/windows/includes/SDL2/SDL_rect.h:
 C:/Users/USER/Documents/final_project/fuse2d/windows/includes/SDL2/close_code.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/windows/includes/SDL2/SDL_error.h:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/windows/includes/SDL2/SDL_power.h:
 

@@ -403,6 +403,7 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/registry.h
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/scene.h
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/system.h
+ C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_renderer_system.h
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/text_renderer_system.h
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/events/system.h

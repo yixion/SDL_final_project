@@ -1,10 +1,12 @@
 #pragma once
 #include "ecs/systems/sprite_renderer_system.h"
 #include "ecs/systems/text_renderer_system.h"
+#include "ecs/systems/frame_animation_system.h"
 namespace fuse::ecs {
   struct scene {
 
     FUSE_INLINE scene(SDL_Renderer* rd): _renderer(rd) {
+      register_system<ecs::frame_animation_system>();
       register_system<ecs::sprite_renderer_system>();
       register_system<ecs::text_renderer_system>();
     }
@@ -31,12 +33,24 @@ namespace fuse::ecs {
     FUSE_INLINE void start(){
       //load texture
       auto sprite = _assets.load_texture("assets/test.png","test",_renderer);
+      auto f1 = _assets.load_texture("assets/fly1.png","f1",_renderer);
+      auto f2 = _assets.load_texture("assets/fly2.png","f2",_renderer);
       //load texture asset
       auto font = _assets.load_font("assets/font.ttf", "ft", 30);
       //create entity
       ecs::entity entity1 = add_entity("player");
       ecs::entity entity2 = add_entity("text");
+      ecs::entity entity3 = add_entity("plane");
+
+      //add animation asset
+      auto animation = _assets.add<animation_asset>("fight");
+      animation->instance.frames.push_back(f1->id);
+      animation->instance.frames.push_back(f2->id);
+      animation->instance.speed = 300;
+      
       //add sprite component
+      auto& a = entity3.add_component<ecs::animation_component>();
+      a.animation = animation->id;
       entity1.add_component<ecs::sprite_component>().sprite = sprite->id;
       auto& tx = entity2.add_component<ecs::text_component>();
       tx.text = "This is a text!";
