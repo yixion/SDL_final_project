@@ -396,17 +396,20 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: engine/CMakeFiles/eng
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/tilemap.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/common.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/graphics.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/physics.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/ecs.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/entity.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/registry.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/scene.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/rigidbody_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/text_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/tilemap_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/events/system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/vec2.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/physics/rigidbody2.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.cpp \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/dispatcher.h \
@@ -644,6 +647,8 @@ C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_base.h:
 C:/msys64/ucrt64/include/c++/13.2.0/bits/atomic_lockfree_defines.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/inputs.cpp:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/rigidbody_system.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/amxbf16intrin.h:
 
@@ -1229,6 +1234,8 @@ C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/registry.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/tilemap.h:
 
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/physics.h:
+
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/entity.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/registry.h:
@@ -1242,6 +1249,8 @@ C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_rende
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/tilemap_renderer_system.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/vec2.h:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/physics/rigidbody2.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.cpp:
 

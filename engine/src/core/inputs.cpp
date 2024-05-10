@@ -1,4 +1,3 @@
-#pragma once
 #include "pch.h"
 #include "inputs.h"
 #include "events/system.h"

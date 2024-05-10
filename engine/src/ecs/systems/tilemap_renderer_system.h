@@ -6,6 +6,7 @@ namespace fuse::ecs
     struct tilemap_renderer_system:system
     {
         FUSE_INLINE void update(float){
+            //get the entities with a tlie_component 
             for(auto& e:view<tilemap_component>()){
                 auto& tr = e.get_component<transform_component>();
                 auto& tm = e.get_component<tilemap_component>().tilemap;
@@ -15,7 +16,7 @@ namespace fuse::ecs
 
                 //render current tilemap's tiles
                 for(auto& tile_entt: view<tile_component>()){
-                    //check if tile belongs to tilemap
+                    //check if tile belongs to tilemap and tile set in the tile map
                     auto& tile = tile_entt.get_component<tile_component>();
                     if(tile.tilemap != tm && !tilemap.tilesets.count(tile.tileset)){
                         continue;

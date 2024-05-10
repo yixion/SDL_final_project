@@ -14,13 +14,13 @@ namespace fuse::math{
         //operator(-)
         FUSE_INLINE vec2<T> operator-(const vec2<T> &v2)const{return vec2<T>(this->x-v2.x, this->y-v2.y);}
         //operator(+=)
-        FUSE_INLINE vec2<T> &operator+=(const vec2<T> &v2)const{
+        FUSE_INLINE vec2<T> &operator+=(const vec2<T> &v2){
             this->x += v2.x;
             this->y += v2.y;
             return *this;
         }
         //operator(-=)
-        FUSE_INLINE vec2<T> &operator-=(const vec2<T> &v2)const{
+        FUSE_INLINE vec2<T> &operator-=(const vec2<T> &v2){
             this->x -= v2.x;
             this->y -= v2.y;
             return *this;
