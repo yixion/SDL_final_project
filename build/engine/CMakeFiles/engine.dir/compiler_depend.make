@@ -402,6 +402,7 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: engine/CMakeFiles/eng
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/registry.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/scene.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/system.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/collision_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/rigidbody_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_renderer_system.h \
@@ -1091,6 +1092,8 @@ C:/msys64/ucrt64/include/sys/types.h:
 C:/msys64/ucrt64/include/time.h:
 
 C:/msys64/ucrt64/include/vadefs.h:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/collision_system.h:
 
 C:/msys64/ucrt64/include/wchar.h:
 

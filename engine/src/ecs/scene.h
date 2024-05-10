@@ -4,6 +4,7 @@
 #include "ecs/systems/frame_animation_system.h"
 #include "ecs/systems/tilemap_renderer_system.h"
 #include "ecs/systems/rigidbody_system.h"
+#include "ecs/systems/collision_system.h"
 
 namespace fuse::ecs {
   struct scene {
@@ -14,6 +15,7 @@ namespace fuse::ecs {
       register_system<ecs::sprite_renderer_system>();
       register_system<ecs::text_renderer_system>();
       register_system<ecs::tilemap_renderer_system>();
+      register_system<ecs::collision_system>();
     }
 
     FUSE_INLINE ~scene() {
@@ -30,21 +32,44 @@ namespace fuse::ecs {
     }
 
     FUSE_INLINE void update(float dt) {
-      //set the color of the renderer to white
-      SDL_SetRenderDrawColor(_renderer, 255, 255, 255, 255);
       for (auto& sys : _systems) { sys->update(dt); }
+
+      //render box colliders
+      SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
+      for(auto& e:_registry.view<collider_component>()){
+        auto& c = _registry.get_component<collider_component>(e);
+        SDL_RenderDrawRectF(_renderer, &c.collider);
+      }
+      SDL_SetRenderDrawColor(_renderer, 255, 255, 255, 255);
     }
 
     FUSE_INLINE void start(){
+      //test collision system
+      auto sp1 = _assets.load_texture("assets/obj1.png", "", _renderer);
+      auto sp2 = _assets.load_texture("assets/obj2.png", "", _renderer);
+
+      //add entity
+      auto e1 = add_entity("entity1");
+      e1.add_component<rigidbody_component>().body.set_force_x(-50);
+      e1.get_component<transform_component>().translate.x = 250;
+      e1.add_component<sprite_component>().sprite = sp1->id;
+      e1.add_component<collider_component>();
+
+      //add second entity
+      auto e2 = add_entity("entity2");
+      e2.add_component<rigidbody_component>().body.set_force_x(50);
+      e2.add_component<sprite_component>().sprite = sp2->id;
+      e2.add_component<collider_component>(); 
+
       //test physics
       //load sprite
-      auto sp = _assets.load_texture("assets/obj1.png", "", _renderer);
+      // auto sp = _assets.load_texture("assets/obj1.png", "", _renderer);
 
-      //add tilemap entity
-      auto entity = add_entity("rigibody");
-      entity.add_component<sprite_component>().sprite = sp->id;
-      auto& rb = entity.add_component<rigidbody_component>();
-      rb.body.gravity_scale = 1.0f;
+      //add rigidbody entity
+      // auto entity = add_entity("rigidbody");
+      // entity.add_component<sprite_component>().sprite = sp->id;
+      // auto& rb = entity.add_component<rigidbody_component>();
+      // rb.body.gravity_scale = 1.0f;
 
       //load texture
       // auto sprite = _assets.load_texture("assets/test.png","test",_renderer);

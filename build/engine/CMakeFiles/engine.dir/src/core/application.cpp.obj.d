@@ -27,4 +27,5 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/text_renderer_system.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/tilemap_renderer_system.h \
- C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/rigidbody_system.h
+ C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/rigidbody_system.h \
+ C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/collision_system.h
