@@ -3,8 +3,8 @@
 
 namespace fuse::ecs
 {
-    
   struct rigidbody_component{
+    FUSE_INLINE rigidbody_component(const rigidbody_component&) = default;
     FUSE_INLINE rigidbody_component() = default;
     bool disabled = false;
     rigidbody2 body;

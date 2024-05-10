@@ -38,7 +38,7 @@ namespace fuse::ecs
 
                 //define target viewport
                 SDL_FRect dst{
-                    tr.translate.x = 100.0, tr.translate.y = 100.0,
+                    tr.translate.x, tr.translate.y,
                     width * tr.scale.x, height *tr.scale.y
                 };
 

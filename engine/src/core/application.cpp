@@ -59,7 +59,7 @@ namespace fuse{
         while(is_running){
             inputs::dispatch_evnets();
             SDL_RenderClear(renderer);
-            scene->update(0.0f);
+            scene->update(0.016666666);
             SDL_RenderPresent(renderer);
         }
 

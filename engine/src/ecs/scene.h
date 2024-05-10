@@ -9,6 +9,7 @@ namespace fuse::ecs {
   struct scene {
 
     FUSE_INLINE scene(SDL_Renderer* rd): _renderer(rd) {
+      register_system<ecs::rigidbody_system>();
       register_system<ecs::frame_animation_system>();
       register_system<ecs::sprite_renderer_system>();
       register_system<ecs::text_renderer_system>();
@@ -37,7 +38,7 @@ namespace fuse::ecs {
     FUSE_INLINE void start(){
       //test physics
       //load sprite
-      auto sp = _assets.load_texture("asset/obj1.png", "", _renderer);
+      auto sp = _assets.load_texture("assets/obj1.png", "", _renderer);
 
       //add tilemap entity
       auto entity = add_entity("rigibody");

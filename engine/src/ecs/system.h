@@ -1,9 +1,11 @@
 #pragma once
 #include "entity.h"
+#include "assets/registry.h"
 #include "ecs/components/common.h"
 #include "ecs/components/graphics.h"
-#include "assets/registry.h"
 #include "ecs/components/physics.h"
+
+
 
 namespace fuse::ecs {
   struct system {

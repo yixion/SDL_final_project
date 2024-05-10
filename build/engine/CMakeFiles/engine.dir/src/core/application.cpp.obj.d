@@ -13,15 +13,15 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/entity.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/registry.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/ecs.h \
- C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/common.h \
- C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/graphics.h \
- C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/asset.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/registry.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/font.h \
+ C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/asset.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/audio.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/tilemap.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/texture.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/animation.h \
+ C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/common.h \
+ C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/graphics.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/physics.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/physics/rigidbody2.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/text_renderer_system.h \
