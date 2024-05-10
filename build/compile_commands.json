@@ -1,0 +1,38 @@
+[
+{
+  "directory": "C:/Users/USER/Documents/final_project/fuse2d/build/engine",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DFUSE_EXPORT -D_DEBUG -Dengine_EXPORTS @CMakeFiles/engine.dir/includes_CXX.rsp -g -std=gnu++17 -Winvalid-pch -x c++-header -include C:/Users/USER/Documents/final_project/fuse2d/build/engine/CMakeFiles/engine.dir/cmake_pch.hxx -o CMakeFiles\\engine.dir\\cmake_pch.hxx.gch -c C:\\Users\\USER\\Documents\\final_project\\fuse2d\\build\\engine\\CMakeFiles\\engine.dir\\cmake_pch.hxx.cxx",
+  "file": "C:/Users/USER/Documents/final_project/fuse2d/build/engine/CMakeFiles/engine.dir/cmake_pch.hxx.cxx",
+  "output": "engine/CMakeFiles/engine.dir/cmake_pch.hxx.gch"
+},
+{
+  "directory": "C:/Users/USER/Documents/final_project/fuse2d/build/engine",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DFUSE_EXPORT -D_DEBUG -Dengine_EXPORTS @CMakeFiles/engine.dir/includes_CXX.rsp -g -std=gnu++17 -Winvalid-pch -include C:/Users/USER/Documents/final_project/fuse2d/build/engine/CMakeFiles/engine.dir/cmake_pch.hxx -o CMakeFiles\\engine.dir\\src\\core\\application.cpp.obj -c C:\\Users\\USER\\Documents\\final_project\\fuse2d\\engine\\src\\core\\application.cpp",
+  "file": "C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.cpp",
+  "output": "engine/CMakeFiles/engine.dir/src/core/application.cpp.obj"
+},
+{
+  "directory": "C:/Users/USER/Documents/final_project/fuse2d/build/engine",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DFUSE_EXPORT -D_DEBUG -Dengine_EXPORTS @CMakeFiles/engine.dir/includes_CXX.rsp -g -std=gnu++17 -Winvalid-pch -include C:/Users/USER/Documents/final_project/fuse2d/build/engine/CMakeFiles/engine.dir/cmake_pch.hxx -o CMakeFiles\\engine.dir\\src\\core\\inputs.cpp.obj -c C:\\Users\\USER\\Documents\\final_project\\fuse2d\\engine\\src\\core\\inputs.cpp",
+  "file": "C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/inputs.cpp",
+  "output": "engine/CMakeFiles/engine.dir/src/core/inputs.cpp.obj"
+},
+{
+  "directory": "C:/Users/USER/Documents/final_project/fuse2d/build/engine",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DFUSE_EXPORT -D_DEBUG -Dengine_EXPORTS @CMakeFiles/engine.dir/includes_CXX.rsp -g -std=gnu++17 -Winvalid-pch -include C:/Users/USER/Documents/final_project/fuse2d/build/engine/CMakeFiles/engine.dir/cmake_pch.hxx -o CMakeFiles\\engine.dir\\src\\pch.cpp.obj -c C:\\Users\\USER\\Documents\\final_project\\fuse2d\\engine\\src\\pch.cpp",
+  "file": "C:/Users/USER/Documents/final_project/fuse2d/engine/src/pch.cpp",
+  "output": "engine/CMakeFiles/engine.dir/src/pch.cpp.obj"
+},
+{
+  "directory": "C:/Users/USER/Documents/final_project/fuse2d/build/game",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/game.dir/includes_CXX.rsp -g -std=gnu++17 -Winvalid-pch -x c++-header -include C:/Users/USER/Documents/final_project/fuse2d/build/game/CMakeFiles/game.dir/cmake_pch.hxx -o CMakeFiles\\game.dir\\cmake_pch.hxx.gch -c C:\\Users\\USER\\Documents\\final_project\\fuse2d\\build\\game\\CMakeFiles\\game.dir\\cmake_pch.hxx.cxx",
+  "file": "C:/Users/USER/Documents/final_project/fuse2d/build/game/CMakeFiles/game.dir/cmake_pch.hxx.cxx",
+  "output": "game/CMakeFiles/game.dir/cmake_pch.hxx.gch"
+},
+{
+  "directory": "C:/Users/USER/Documents/final_project/fuse2d/build/game",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/game.dir/includes_CXX.rsp -g -std=gnu++17 -Winvalid-pch -include C:/Users/USER/Documents/final_project/fuse2d/build/game/CMakeFiles/game.dir/cmake_pch.hxx -o CMakeFiles\\game.dir\\src\\game.cpp.obj -c C:\\Users\\USER\\Documents\\final_project\\fuse2d\\game\\src\\game.cpp",
+  "file": "C:/Users/USER/Documents/final_project/fuse2d/game/src/game.cpp",
+  "output": "game/CMakeFiles/game.dir/src/game.cpp.obj"
+}
+]
