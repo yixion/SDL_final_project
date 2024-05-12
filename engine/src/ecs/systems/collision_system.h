@@ -33,13 +33,10 @@ namespace fuse::ecs
                     if(o == e){continue;}
                     auto& c2 = o.get_component<collider_component>();
                     if(check_collision(c1.collider, c2.collider)){
-                        auto& rb1 = e.get_component<rigidbody_component>();
-                        auto& rb2 = o.get_component<rigidbody_component>();
-                        rb1.body.gravity_scale = 0.5f;
-                        rb2.body.gravity_scale = 0.5f;
-                        rb1.body.set_force_x(-rb1.body.get_force_x());
-                        rb2.body.set_force_x(-rb2.body.get_force_x());
-                        FUSE_INFO("collision: %d->%d", e.id(), o.id());
+                        if(e.has_component<script_component>()){
+                            auto& script = e.get_component<script_component>();
+                            script.instance->on_collision(o);
+                        }
  
                     }
                 }

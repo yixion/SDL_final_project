@@ -1,4 +1,4 @@
-#pragma
+#pragma once
 #include "font.h"
 #include "audio.h"
 #include "tilemap.h"
@@ -10,6 +10,7 @@ namespace fuse
 {
     struct asset_registry
     {
+        FUSE_INLINE asset_registry() = default;
         FUSE_INLINE void clear(){
             for(auto& [_, list]:_data){
                 for(auto a:list){FUSE_DELETE(a);}

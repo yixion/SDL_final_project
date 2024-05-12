@@ -394,6 +394,7 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: engine/CMakeFiles/eng
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/registry.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/texture.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/assets/tilemap.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/behaviour.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/common.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/graphics.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/physics.h \
@@ -405,12 +406,15 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: engine/CMakeFiles/eng
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/collision_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/rigidbody_system.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/script_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/text_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/tilemap_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/events/system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/vec2.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/physics/rigidbody2.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/player_controller.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/script_instance.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.cpp \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/dispatcher.h \
@@ -488,6 +492,8 @@ C:/Users/USER/Documents/final_project/fuse2d/windows/includes/SDL2/SDL_rect.h:
 C:/Users/USER/Documents/final_project/fuse2d/windows/includes/SDL2/close_code.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/windows/includes/SDL2/SDL_error.h:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/player_controller.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h:
 
@@ -871,6 +877,8 @@ C:/msys64/ucrt64/include/c++/13.2.0/bits/stringfwd.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/uniform_int_dist.h:
 
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/behaviour.h:
+
 C:/msys64/ucrt64/include/c++/13.2.0/bits/unique_ptr.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/typeid.h:
@@ -1044,6 +1052,8 @@ C:/msys64/ucrt64/include/errno.h:
 C:/msys64/ucrt64/include/intrin.h:
 
 C:/msys64/ucrt64/include/locale.h:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/script_instance.h:
 
 C:/msys64/ucrt64/include/malloc.h:
 
@@ -1246,6 +1256,8 @@ C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/registry.h:
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/scene.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/system.h:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/script_system.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_renderer_system.h:
 

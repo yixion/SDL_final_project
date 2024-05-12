@@ -4,6 +4,7 @@
 #include "ecs/components/common.h"
 #include "ecs/components/graphics.h"
 #include "ecs/components/physics.h"
+#include "ecs/components/behaviour.h"
 
 
 

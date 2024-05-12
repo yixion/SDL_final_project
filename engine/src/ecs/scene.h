@@ -3,8 +3,10 @@
 #include "ecs/systems/text_renderer_system.h"
 #include "ecs/systems/frame_animation_system.h"
 #include "ecs/systems/tilemap_renderer_system.h"
+#include "scripts/player_controller.h"
 #include "ecs/systems/rigidbody_system.h"
 #include "ecs/systems/collision_system.h"
+#include "ecs/systems/script_system.h"
 
 namespace fuse::ecs {
   struct scene {
@@ -16,6 +18,7 @@ namespace fuse::ecs {
       register_system<ecs::text_renderer_system>();
       register_system<ecs::tilemap_renderer_system>();
       register_system<ecs::collision_system>();
+      register_system<ecs::script_system>();
     }
 
     FUSE_INLINE ~scene() {
@@ -50,14 +53,13 @@ namespace fuse::ecs {
 
       //add entity
       auto e1 = add_entity("entity1");
-      e1.add_component<rigidbody_component>().body.set_force_x(-50);
-      e1.get_component<transform_component>().translate.x = 250;
+      e1.add_component<script_component>().bind<player_controller>();
+      e1.get_component<transform_component>().translate.x = 500;
       e1.add_component<sprite_component>().sprite = sp1->id;
       e1.add_component<collider_component>();
 
       //add second entity
       auto e2 = add_entity("entity2");
-      e2.add_component<rigidbody_component>().body.set_force_x(50);
       e2.add_component<sprite_component>().sprite = sp2->id;
       e2.add_component<collider_component>(); 
 
