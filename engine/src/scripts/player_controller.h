@@ -4,35 +4,20 @@
 namespace fuse
 {
     struct player_controller:script_instance{
-
-        FUSE_INLINE void on_start(){
-            FUSE_INFO("player_script started!");
-        }
-
         FUSE_INLINE void on_collision(ecs::entity e){
-            FUSE_INFO("colliding with: %d", e.id());
+            auto& sp = get_component<ecs::sprite_component>();
+            sp.sprite = get_asset<texture_asset>("dead")->id;
+            get_component<ecs::collider_component>().disabled = true;
+            get_component<ecs::rigidbody_component>().disabled = true;
         }
 
         FUSE_INLINE void on_update(float dt){
-            auto& t = get_component<ecs::transform_component>();
-            
-            if(inputs::is_key(SDL_SCANCODE_A)){
-                t.translate.x -= (speed*dt);
-            }
-
-            if(inputs::is_key(SDL_SCANCODE_D)){
-                t.translate.x += (speed*dt);
-            }
-
-            if(inputs::is_key(SDL_SCANCODE_W)){
-                t.translate.y -= (speed *dt);
-            }
-
-            if(inputs::is_key(SDL_SCANCODE_S)){
-                t.translate.y += (speed * dt);
+            auto& rb = get_component<ecs::rigidbody_component>();
+            if(inputs::is_key(SDL_SCANCODE_SPACE)){
+                rb.body.set_force_y(-1000.0f);
+            }else{
+                rb.body.set_force_y(0.0f);
             }
         }
-        private:
-            float speed = 300.0f;
     };
 } // namespace fuse

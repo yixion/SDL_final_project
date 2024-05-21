@@ -26,10 +26,13 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/physics/rigidbody2.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/components/behaviour.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/script_instance.h \
+ C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/random.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/text_renderer_system.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/frame_animation_system.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/tilemap_renderer_system.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/player_controller.h \
+ C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/pipe_spawner.h \
+ C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/scrolling_ground.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/rigidbody_system.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/collision_system.h \
  C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/script_system.h

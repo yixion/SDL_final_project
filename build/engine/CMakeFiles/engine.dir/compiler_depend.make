@@ -411,10 +411,13 @@ engine/CMakeFiles/engine.dir/src/core/application.cpp.obj: engine/CMakeFiles/eng
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/text_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/tilemap_renderer_system.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/events/system.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/random.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/vec2.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/physics/rigidbody2.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/pipe_spawner.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/player_controller.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/script_instance.h \
+  C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/scrolling_ground.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.cpp \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.h \
   C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/dispatcher.h \
@@ -636,6 +639,8 @@ C:/msys64/ucrt64/include/c++/13.2.0/backward/auto_ptr.h:
 C:/msys64/ucrt64/include/c++/13.2.0/backward/binders.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bit:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/scrolling_ground.h:
 
 C:/msys64/ucrt64/include/c++/13.2.0/bits/algorithmfwd.h:
 
@@ -1263,9 +1268,13 @@ C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/sprite_rende
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/ecs/systems/tilemap_renderer_system.h:
 
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/random.h:
+
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/math/vec2.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/physics/rigidbody2.h:
+
+C:/Users/USER/Documents/final_project/fuse2d/engine/src/scripts/pipe_spawner.h:
 
 C:/Users/USER/Documents/final_project/fuse2d/engine/src/core/application.cpp:
 

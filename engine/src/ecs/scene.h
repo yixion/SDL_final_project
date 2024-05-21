@@ -4,6 +4,8 @@
 #include "ecs/systems/frame_animation_system.h"
 #include "ecs/systems/tilemap_renderer_system.h"
 #include "scripts/player_controller.h"
+#include "scripts/pipe_spawner.h"
+#include "scripts/scrolling_ground.h"
 #include "ecs/systems/rigidbody_system.h"
 #include "ecs/systems/collision_system.h"
 #include "ecs/systems/script_system.h"
@@ -47,83 +49,63 @@ namespace fuse::ecs {
     }
 
     FUSE_INLINE void start(){
-      //test collision system
-      auto sp1 = _assets.load_texture("assets/obj1.png", "", _renderer);
-      auto sp2 = _assets.load_texture("assets/obj2.png", "", _renderer);
+      //load player sprites
+      auto dead = _assets.load_texture("assets/Dead.png", "dead", _renderer);
+      auto fly = _assets.load_texture("assets/Fly.png", "fly", _renderer);
+      //load pipe sprite
+      auto pipe = _assets.load_texture("assets/pipe.png", "pipe", _renderer);
+      //load bg texture
+      auto ground = _assets.load_texture("assets/ground.png", "ground", _renderer);
+      auto background = _assets.load_texture("assets/BG.png", "background", _renderer);
+      //load text font
+      auto font = _assets.load_font("assets/font.ttf", "font", 30);
 
-      //add entity
-      auto e1 = add_entity("entity1");
-      e1.add_component<script_component>().bind<player_controller>();
-      e1.get_component<transform_component>().translate.x = 500;
-      e1.add_component<sprite_component>().sprite = sp1->id;
-      e1.add_component<collider_component>();
+      //background
+      auto bg = add_entity("background");
+      bg.add_component<sprite_component>().sprite = background->id;
 
-      //add second entity
-      auto e2 = add_entity("entity2");
-      e2.add_component<sprite_component>().sprite = sp2->id;
-      e2.add_component<collider_component>(); 
+      //ground
+      auto gd = add_entity("ground");
+      auto& gds = gd.add_component<ecs::script_component>();
+      gds.bind<scrolling_ground>();
+      gds.name = "scrolling_ground";
+      auto& gd_tr = gd.get_component<transform_component>();
+      gd_tr.translate = vec2f(0.0f, 400);
+      gd.add_component<rigidbody_component>().body.velocity.x = -100.0f;
+      auto& gd_sp = gd.add_component<sprite_component>().sprite = ground->id;
+      auto& gd_cl = gd.add_component<collider_component>();
+      gd_cl.collider = {0,0, (float)ground->instance.width, (float)ground->instance.height};
 
-      //test physics
-      //load sprite
-      // auto sp = _assets.load_texture("assets/obj1.png", "", _renderer);
-
-      //add rigidbody entity
-      // auto entity = add_entity("rigidbody");
-      // entity.add_component<sprite_component>().sprite = sp->id;
-      // auto& rb = entity.add_component<rigidbody_component>();
-      // rb.body.gravity_scale = 1.0f;
-
-      //load texture
-      // auto sprite = _assets.load_texture("assets/test.png","test",_renderer);
-      // auto f1 = _assets.load_texture("assets/fly1.png","f1",_renderer);
-      // auto f2 = _assets.load_texture("assets/fly2.png","f2",_renderer);
-      // auto ts = _assets.load_texture("assets/tex.png", "", _renderer);
-
-      //load texture asset
-      // auto font = _assets.load_font("assets/font.ttf", "ft", 30);
-
-      //add animation asset
-      // auto animation = _assets.add<animation_asset>("fight");
-      // animation->instance.frames.push_back(f1->id);
-      // animation->instance.frames.push_back(f2->id);
-      // animation->instance.speed = 300;
+      //player
+      auto player = add_entity("player");
+      auto& ps = player.add_component<ecs::script_component>();
+      ps.bind<player_controller>();
+      ps.name = "player_controller";
+      auto& tr = player.get_component<transform_component>();
+      tr.translate = vec2f(126, 100);
+      tr.scale = vec2f(0.5f);
+      auto& rb = player.add_component<rigidbody_component>();
+      rb.body.gravity_scale = 25.0f;
+      player.add_component<sprite_component>().sprite = fly->id;
+      auto& cl = player.add_component<collider_component>();
+      cl.collider={0,0,58,38};
       
-      //create tilemap asset
-      // auto tm = _assets.add<tilemap_asset>("tm");
-      // tm->instance.tilesets.insert(ts->id);
-      // tm->instance.col_count = 16;
-      // tm->instance.row_count = 8;
-      // tm->instance.tilesize = 64;
-      
-      //add tilemap entity
-      // add_entity("tilemap").add_component<tilemap_component>().tilemap = tm->id;
+      //pipe spawner
+      auto spawner = add_entity("game");
+      auto& ss = spawner.add_component<script_component>();
+      ss.bind<pipe_spawner>();
+      ss.name = "pipe_spawner";
 
-      //add entity
-      // ecs::entity entity1 = add_entity("player");
-      // ecs::entity entity2 = add_entity("text");
-      // ecs::entity entity3 = add_entity("plane");
 
-      //turn image into multiple entities with tiles
-      // for(int col = 0; col<tm->instance.col_count; col++){
-      //   for(int row = 0; row<tm->instance.row_count;row++){
-      //     ecs::entity e = add_entity("tile");
-      //     auto& tile = e.add_component<tile_component>();
-      //     tile.tileset = ts->id;
-      //     tile.tilemap = tm->id;
-      //     tile.offset_x = col;
-      //     tile.offset_y = row;
-      //     tile.row = col;
-      //     tile.col = row;
-      //   }
-      // }
-      
-      //add sprite component, font and animation 
-      // auto& a = entity3.add_component<ecs::animation_component>();
-      // a.animation = animation->id;
-      // entity1.add_component<ecs::sprite_component>().sprite = sprite->id;
-      // auto& tx = entity2.add_component<ecs::text_component>();
-      // tx.text = "This is a text!";
-      // tx.font = font->id;
+
+      //score text
+      auto score = add_entity("score");
+      auto& s_tr = score.get_component<transform_component>();
+      s_tr.translate = vec2f(120, 20);
+      auto& tx = score.add_component<text_component>();
+      tx.text = "Score: 0";
+      tx.font = font->id;
+
 
       //start system
       for(auto& sys:_systems){sys->start();}

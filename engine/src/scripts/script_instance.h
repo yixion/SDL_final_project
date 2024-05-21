@@ -6,6 +6,7 @@
 
 #include "assets/registry.h"
 #include "core/inputs.h"
+#include "math/random.h"
 
 namespace fuse
 {
@@ -51,13 +52,32 @@ namespace fuse
             FUSE_INLINE bool has_component(){
                 return _registry->has_component<T>(_entity);
             }
-
-            template<typename T>
+            
             FUSE_INLINE ecs::entity add_entity(){
                 auto entity = _registry->add_entity();
                 _registry->add_component<ecs::transform_component>(entity);
                 _registry->add_component<ecs::info_component>(entity);
                 return ecs::entity(entity, _registry);
+            }
+            FUSE_INLINE void destroy(){
+                _registry->destroy(_entity);
+            }
+
+            FUSE_INLINE ecs::entity find_entity(const std::string& name){
+                for(auto& e: _registry->view<ecs::info_component>()){
+                    auto& i = _registry->get_component<ecs::info_component>(e);
+
+                    if(!i.name.compare(name)){
+                        return ecs::entity(e,_registry);
+                    }
+                }
+
+                return ecs::entity();
+            }
+            
+            template<class T>
+            FUSE_INLINE T* get_asset(const std::string& name){
+                return _assets->get<T>(name);
             }
         private:
             ecs::entityid _entity = INVALID_ID;
