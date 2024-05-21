@@ -1,18 +1,17 @@
-# Final project(Game name)
-This is the game ... 
+# Final project(Air fight)
+This is the game there is an airplane flying through the obstacle and getting the point.
+
+Game will stop when airplane crash the boundary or obstacle.
 ## using language
-we are using C language.
+we are using C and C++.
+## Construct the environment
+1. Download the [SDL](https://github.com/libsdl-org/SDL/releases/tag/release-2.30.3) for something like creating windown and read the keyboard info.
+2. Download the [SDL_image](https://wiki.libsdl.org/SDL2/Libraries#sdl_image) for loading image.
+3. Download the [SDL_ttf](https://wiki.libsdl.org/SDL2/Libraries#sdl_ttf) for generating font.
+4. Download the [SDL_mixer](https://wiki.libsdl.org/SDL2/Libraries#sdl_mixer) for adding the BGM.
+5. we using vscode and using cmake.
 ## game engine
-SDL
-## for our teamate
-How to use github
+1. ECS(entity component system)
+2. script language. Instantiate the object behavior in the screen.
 
-You can learn how to download SDL from [hear](https://www.youtube.com/watch?v=jUZZC9UXyFs)
-
-You can learn how to use SDL from [hear](https://www.youtube.com/watch?v=JPAyj85tJ5E&list=PLT6WFYYZE6uLMcPGS3qfpYm7T_gViYMMt&index=1)
-
-
-we will have meeting every weeks
-
-## test
 
