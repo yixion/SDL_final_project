@@ -1,7 +1,7 @@
 # Final project(Air fight)
 This is the game there is an airplane flying through the obstacle and getting the point.
 
-Game will stop when airplane crash the boundary or obstacle.
+ame will stop when airplane crash the boundary or obstacle.
 ## using language
 we are using C and C++.
 ## Construct the environment
