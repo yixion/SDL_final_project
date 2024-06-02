@@ -74,7 +74,11 @@ namespace fuse
 
                 return ecs::entity();
             }
-            
+            FUSE_INLINE void play_audio(std::string name, int channel = -1, int loops = 0, int vol = 50 ){
+                auto& chunck = _assets->get<audio_asset>(name)->instance.data;
+                Mix_VolumeChunk(chunck, vol);
+                Mix_PlayChannel(channel, chunck, loops);
+            }
             template<class T>
             FUSE_INLINE T* get_asset(const std::string& name){
                 return _assets->get<T>(name);
