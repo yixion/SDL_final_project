@@ -5,6 +5,7 @@ namespace fuse
 {
     struct player_controller:script_instance{
         FUSE_INLINE void on_collision(ecs::entity e){
+            play_audio("boom");
             auto& sp = get_component<ecs::sprite_component>();
             sp.sprite = get_asset<texture_asset>("dead")->id;
             get_component<ecs::collider_component>().disabled = true;

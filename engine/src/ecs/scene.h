@@ -106,7 +106,10 @@ namespace fuse::ecs {
       tx.text = "Score: 0";
       tx.font = font->id;
 
+      _assets.load_audio("assets/song.mp3","music");
 
+      _assets.load_audio("assets/boom.wav","boom");
+      
       //start system
       for(auto& sys:_systems){sys->start();}
       

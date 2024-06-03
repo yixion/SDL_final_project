@@ -96,6 +96,23 @@ namespace fuse
             _data[type_id<font_asset>()].push_back(asset);
             return asset;
         }
+        FUSE_INLINE audio_asset* load_audio(const std::string& src, const std::string& name){
+            audio_clip audio;
+            audio.data = Mix_LoadWAV(src.c_str());
+            audio.filename = src;
+
+            if(!audio.data){
+                FUSE_ERROR("%s", IMG_GetError());
+                return NULL;
+            }
+
+        auto asset = new audio_asset();
+        asset->instance = audio;
+        asset->name = name;
+
+        _data[type_id<audio_asset>()].push_back(asset);
+        return asset;
+        }
 
         private:
             std::unordered_map<asset_typeid, std::vector<asset*>> _data;

@@ -102,7 +102,9 @@ namespace fuse
                 it++;
             }
         }
-
+        FUSE_INLINE void on_start(){
+            play_audio("music", 1,-1);
+        }
         private:
             std::vector<ecs::entity> pipes;
             bool game_over = false;
