@@ -96,10 +96,7 @@ namespace fuse::ecs {
       ss.bind<pipe_spawner>();
       ss.name = "pipe_spawner";
 
-      //load background music
-      _assets.load_audio("assets/song.mp3","music");
-      //load explosion effect
-      _assets.load_audio("assets/boom.wav","boom");
+
 
       //score text
       auto score = add_entity("score");
@@ -108,6 +105,10 @@ namespace fuse::ecs {
       auto& tx = score.add_component<text_component>();
       tx.text = "Score: 0";
       tx.font = font->id;
+
+      _assets.load_audio("assets/song.mp3","music");
+
+      _assets.load_audio("assets/boom.wav","boom");
 
       //start system
       for(auto& sys:_systems){sys->start();}
