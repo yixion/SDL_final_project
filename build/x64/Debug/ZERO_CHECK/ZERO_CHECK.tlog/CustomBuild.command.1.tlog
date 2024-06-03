@@ -1,0 +1,10 @@
+^C:\USERS\USER\DOCUMENTS\FINAL_PROJECT\FUSE2D\FUSE2D\BUILD\CMAKEFILES\BA3D797AF1445B549F1581777563B157\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/user/Documents/final_project/fuse2d/fuse2d -BC:/Users/user/Documents/final_project/fuse2d/fuse2d/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/user/Documents/final_project/fuse2d/fuse2d/build/fuse2d.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

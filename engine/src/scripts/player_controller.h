@@ -19,6 +19,18 @@ namespace fuse
             }else{
                 rb.body.set_force_y(0.0f);
             }
+            if(inputs::is_key(SDL_SCANCODE_A)){
+                auto& sp = get_component<ecs::sprite_component>();
+                sp.sprite = get_asset<texture_asset>("styleA")->id;
+                counter = 0;
+            }
+            if(counter >= 20){
+                auto& sp = get_component<ecs::sprite_component>();
+                sp.sprite = get_asset<texture_asset>("fly")->id;
+            }
+            counter +=1;
         }
+        private:
+            int counter = 0;
     };
 } // namespace fuse
