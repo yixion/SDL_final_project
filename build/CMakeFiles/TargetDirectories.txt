@@ -1,8 +1,6 @@
-C:/Users/USER/Documents/final_project/fuse2d/build/CMakeFiles/edit_cache.dir
-C:/Users/USER/Documents/final_project/fuse2d/build/CMakeFiles/rebuild_cache.dir
-C:/Users/USER/Documents/final_project/fuse2d/build/engine/CMakeFiles/engine.dir
-C:/Users/USER/Documents/final_project/fuse2d/build/engine/CMakeFiles/edit_cache.dir
-C:/Users/USER/Documents/final_project/fuse2d/build/engine/CMakeFiles/rebuild_cache.dir
-C:/Users/USER/Documents/final_project/fuse2d/build/game/CMakeFiles/game.dir
-C:/Users/USER/Documents/final_project/fuse2d/build/game/CMakeFiles/edit_cache.dir
-C:/Users/USER/Documents/final_project/fuse2d/build/game/CMakeFiles/rebuild_cache.dir
+C:/Users/ASUS/Documents/VSC/FUSE2d/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/ASUS/Documents/VSC/FUSE2d/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/ASUS/Documents/VSC/FUSE2d/build/engine/CMakeFiles/engine.dir
+C:/Users/ASUS/Documents/VSC/FUSE2d/build/engine/CMakeFiles/ALL_BUILD.dir
+C:/Users/ASUS/Documents/VSC/FUSE2d/build/game/CMakeFiles/game.dir
+C:/Users/ASUS/Documents/VSC/FUSE2d/build/game/CMakeFiles/ALL_BUILD.dir

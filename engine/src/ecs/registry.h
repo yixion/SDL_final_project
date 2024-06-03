@@ -77,7 +77,7 @@ namespace fuse::ecs {
       _components[type] = array;
       return array;
     }
-
+    
   private:
     std::unordered_map<componentid, array_instance*> _components;
     std::unordered_map<entityid, signature> _signatures;

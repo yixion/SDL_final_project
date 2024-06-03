@@ -1,0 +1,10 @@
+^C:\USERS\ASUS\DOCUMENTS\VSC\FUSE2D\BUILD\CMAKEFILES\DB577B12EC75E4EDC38336DB28E0DF2D\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ASUS/Documents/VSC/FUSE2d -BC:/Users/ASUS/Documents/VSC/FUSE2d/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/ASUS/Documents/VSC/FUSE2d/build/fuse2d.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

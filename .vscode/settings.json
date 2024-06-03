@@ -62,7 +62,17 @@
         "xiosbase": "cpp",
         "xlocale": "cpp",
         "xlocbuf": "cpp",
-        "xlocinfo": "cpp"
+        "xlocinfo": "cpp",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "cstdarg": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "string_view": "cpp",
+        "numbers": "cpp",
+        "cinttypes": "cpp"
     },
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.errorSquiggles": "disabled"
