@@ -52,6 +52,7 @@ namespace fuse::ecs {
       //load player sprites
       auto dead = _assets.load_texture("assets/Dead.png", "dead", _renderer);
       auto fly = _assets.load_texture("assets/Fly.png", "fly", _renderer);
+      auto styleA = _assets.load_texture("assets/Fly_A.png", "styleA", _renderer);
       //load pipe sprite
       auto pipe = _assets.load_texture("assets/pipe.png", "pipe", _renderer);
       //load bg texture
