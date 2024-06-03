@@ -45,8 +45,8 @@ This is a game where an airplane flies through obstacles and attempts to get to 
 2. Use CMake to configure and generate build files.
 3. Compile the project using Visual Studio Code.
 
-## Running the Game
+## To Run the Game
 1. Ensure all assets (graphics, audio, fonts) are in the correct directories.
-2. Press F5 to start the game.
+2. Press F5 to start the game and press A to change the color of the plane
 3. Use spacebar to control the airplane and navigate through obstacles.
 4. The game will terminate if the airplane collides with any boundaries or obstacles.
