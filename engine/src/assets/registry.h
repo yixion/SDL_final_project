@@ -96,6 +96,7 @@ namespace fuse
             _data[type_id<font_asset>()].push_back(asset);
             return asset;
         }
+
         FUSE_INLINE audio_asset* load_audio(const std::string& src, const std::string& name){
             audio_clip audio;
             audio.data = Mix_LoadWAV(src.c_str());
@@ -106,15 +107,16 @@ namespace fuse
                 return NULL;
             }
 
-        auto asset = new audio_asset();
-        asset->instance = audio;
-        asset->name = name;
+            auto asset = new audio_asset();
+            asset->instance = audio;
+            asset->name = name;
 
-        _data[type_id<audio_asset>()].push_back(asset);
-        return asset;
+            _data[type_id<audio_asset>()].push_back(asset);
+            return asset;
         }
 
         private:
+            friend struct asset_serializer;
             std::unordered_map<asset_typeid, std::vector<asset*>> _data;
     };
     

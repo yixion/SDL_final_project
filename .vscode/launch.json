@@ -7,7 +7,7 @@
       "request": "launch",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/build/bin/Debug",
-      "program": "${workspaceFolder}/build/bin/game.exe"
+      "program": "${workspaceFolder}/build/bin/Debug/game.exe"
     },
     {
       "name": "Linux",

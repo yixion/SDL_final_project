@@ -65,5 +65,3 @@ namespace fuse::inputs
     }
 
 } // namespace fuse::inputs
-
-

@@ -67,6 +67,10 @@ namespace fuse{
         auto scene = new ecs::scene(renderer);
         scene->start();
 
+        scene->serialize("assets/scene.yaml");
+
+        // last_tick = get_ticks();
+
         while(is_running){
             compute_deltatime();
             inputs::dispatch_evnets();
@@ -74,14 +78,14 @@ namespace fuse{
             scene->update(deltatime);
             SDL_RenderPresent(renderer);
         }
-
+        
         //free memory
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
-    FUSE_DELETE(scene);
-    IMG_Quit();
-    Mix_Quit();
-    TTF_Quit();
-    SDL_Quit();
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        FUSE_DELETE(scene);
+        IMG_Quit();
+        Mix_Quit();
+        TTF_Quit();
+        SDL_Quit();
     }
 }

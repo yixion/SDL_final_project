@@ -10,6 +10,9 @@
 #include "ecs/systems/collision_system.h"
 #include "ecs/systems/script_system.h"
 
+#include "assets/serializer.h"
+#include "serializer.h"
+
 namespace fuse::ecs {
   struct scene {
 
@@ -124,6 +127,17 @@ namespace fuse::ecs {
       this->_systems.push_back(new_system);
     }
 
+    // serialize scene
+    FUSE_INLINE void serialize(const std::string& path) {
+      YAML::Emitter emitter;
+      emitter << YAML::BeginMap;
+      asset_serializer(&_assets).serialize(emitter);
+      ecs::serializer(&_registry).serialize(emitter);
+      emitter << YAML::EndMap;
+      std::ofstream filepath(path);
+      filepath << emitter.c_str();
+    }
+
     private:
       std::vector<ecs::system*> _systems;
       SDL_Renderer* _renderer = NULL;
@@ -131,4 +145,3 @@ namespace fuse::ecs {
       asset_registry _assets;
     };
 }
-
