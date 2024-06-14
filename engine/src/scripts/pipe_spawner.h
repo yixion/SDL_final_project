@@ -13,7 +13,7 @@ namespace fuse
             auto player = find_entity("player");
             auto& p_rb = player.get_component<ecs::rigidbody_component>();
 
-            //check if player's rigidbody is disabled
+            //check if player's rigidbody is disabled = game over
             if(player.is_alive() && p_rb.disabled){
 
                 //strop ground scroll animation
@@ -24,8 +24,17 @@ namespace fuse
                 //show game over text
                 auto scr = find_entity("score");
                 auto& tx = scr.get_component<ecs::text_component>();
-                tx.text = "Game Over";
+                int final_score = std::stoi(tx.text.substr(7));
+                tx.text = "Game Over!";
 
+                // show final score & best score from yaml file
+                
+
+                // if()
+                
+
+                // close music 
+                play_audio("music", 1,-1, 0);
 
                 //stop all pipes motion
                 for(auto& pipe:pipes){
@@ -97,7 +106,7 @@ namespace fuse
                 if(tr.translate.x<-50){
                     pipe.destroy();
                     auto& tx = find_entity("score").get_component<ecs::text_component>();
-                    tx.text = "Score" + std::to_string(++score);
+                    tx.text = "Score: " + std::to_string(++score);
                 }
                 it++;
             }

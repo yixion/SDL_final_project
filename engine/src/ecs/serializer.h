@@ -22,12 +22,12 @@ namespace fuse::ecs {
                 ecs::entity e(_registry);  // create a entity 
                 deserialize_info(node, e);
                 deserialize_transform(node, e);
-                // deserialize_rigidbody(node, e);
-                // deserialize_collider(node, e);
-                // deserialize_sprite(node, e);
-                // deserialize_animation(node, e);
-                // deserialize_text(node, e);
-                // deserialize_script(node, e);
+                deserialize_rigidbody(node, e);
+                deserialize_collider(node, e);
+                deserialize_sprite(node, e);
+                deserialize_animation(node, e);
+                deserialize_text(node, e);
+                deserialize_script(node, e);
             }
         }
 
@@ -40,12 +40,12 @@ namespace fuse::ecs {
                 em << YAML::BeginMap;
                 serialize_info(em, entity);
                 serialize_transform(em, entity);
-                // serialize_rigidbody(em, entity);
-                // serialize_collider(em, entity);
-                // serialize_sprite(em, entity);
-                // serialize_animation(em, entity);
-                // serialize_text(em, entity);
-                // serialize_script(em, entity);
+                serialize_rigidbody(em, entity);
+                serialize_collider(em, entity);
+                serialize_sprite(em, entity);
+                serialize_animation(em, entity);
+                serialize_text(em, entity);
+                serialize_script(em, entity);
                 em << YAML::EndMap;
             }
             em << YAML::EndSeq;
@@ -104,9 +104,9 @@ namespace fuse::ecs {
                 em << YAML::Key << "rigidbody_component";
                 em << YAML::BeginMap;
                 em << YAML::Key << "gravity" << YAML::Value << r.body.gravity_scale;
-                em << YAML::Key << "velocity" << YAML::Value << r.body.velocity;
+                em << YAML::Key << "velocity" << YAML::Value << YAML::Flow << YAML::BeginSeq << r.body.velocity.x << r.body.velocity.y << YAML::EndSeq;
                 em << YAML::Key << "disabled" << YAML::Value << r.disabled;
-                em << YAML::Key << "force" << YAML::Value << r.body.force;
+                em << YAML::Key << "force" << YAML::Value << YAML::Flow << YAML::BeginSeq << r.body.force.x << r.body.force.y << YAML::EndSeq;
                 em << YAML::EndMap;
             }
         }
@@ -124,19 +124,25 @@ namespace fuse::ecs {
 
         // serialize collider_component
         FUSE_INLINE void serialize_collider(YAML::Emitter& em, entity& e) {
-            auto& c = e.get_component<ecs::collider_component>();
-            em << YAML::Key << "collider_component";
-            em << YAML::BeginMap;
-            em << YAML::Key << "width" << YAML::Value << c.collider.w;
-            em << YAML::Key << "height" << YAML::Value << c.collider.h;
-            em << YAML::Key << "disabled" << YAML::Value << c.disabled;
-            em << YAML::EndMap;
+            if (e.has_component<ecs::collider_component>()) {
+                auto& c = e.get_component<ecs::collider_component>();
+                em << YAML::Key << "collider_component";
+                em << YAML::BeginMap;
+                em << YAML::Key << "x" << YAML::Value << c.collider.x;
+                em << YAML::Key << "y" << YAML::Value << c.collider.y;
+                em << YAML::Key << "width" << YAML::Value << c.collider.w;
+                em << YAML::Key << "height" << YAML::Value << c.collider.h;
+                em << YAML::Key << "disabled" << YAML::Value << c.disabled;
+                em << YAML::EndMap;
+            }
         }
 
         // deserialize collider_component
         FUSE_INLINE void deserialize_collider(YAML::Node node, entity& e) {
             if(auto data = node["collider_component"]) {
                 auto& c = e.add_component<ecs::collider_component>();
+                c.collider.x = data["x"].as<float>();
+                c.collider.y = data["y"].as<float>();
                 c.collider.w = data["width"].as<float>();
                 c.collider.h = data["height"].as<float>();
                 c.disabled = data["disabled"].as<bool>();
@@ -145,12 +151,14 @@ namespace fuse::ecs {
 
         // serialize sprite_component
         FUSE_INLINE void serialize_sprite(YAML::Emitter& em, entity& e) {
-            auto& s = e.get_component<ecs::sprite_component>();
-            em << YAML::Key << "sprite_component";
-            em << YAML::BeginMap;
-            em << YAML::Key << "sprite" << YAML::Value << s.sprite;
-            em << YAML::Key << "flip" << YAML::Value << s.flip;
-            em << YAML::EndMap;
+            if (e.has_component<ecs::sprite_component>()) {
+                auto& s = e.get_component<ecs::sprite_component>();
+                em << YAML::Key << "sprite_component";
+                em << YAML::BeginMap;
+                em << YAML::Key << "sprite" << YAML::Value << s.sprite;
+                em << YAML::Key << "flip" << YAML::Value << s.flip;
+                em << YAML::EndMap;
+            }
         }
 
         // deserialize sprite_component

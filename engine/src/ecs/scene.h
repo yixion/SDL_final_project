@@ -138,6 +138,37 @@ namespace fuse::ecs {
       filepath << emitter.c_str();
     }
 
+    // deserialize scene
+    FUSE_INLINE bool deserialize(const std::string& path) {
+      YAML::Node root;
+      try {
+        root = YAML::LoadFile(path);
+      }
+      catch (YAML::ParserException e) {
+        FUSE_ERROR("Failed to deserialize scene!");
+        return false;
+      }
+      // serialize assets
+      if(auto assets = root["assets"]) {
+        asset_serializer(&_assets).deserialize(assets, _renderer);
+      }
+      // serialize entities
+      if(auto entities = root["assets"]) {
+        ecs::serializer(&_registry).deserialize(entities);
+      }
+      // start scene
+      for(auto& sys: _systems) { sys->start(); }
+    }
+
+    FUSE_INLINE void restart() {
+      for (auto& s : _systems) { FUSE_DELETE(s); }
+      _registry.clear();
+      _systems.clear();
+
+      // Start the scene
+      start();
+    }
+
     private:
       std::vector<ecs::system*> _systems;
       SDL_Renderer* _renderer = NULL;

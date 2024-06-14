@@ -5,11 +5,21 @@
 #include "ecs/scene.h"
 
 namespace fuse{
+    static app_config config;
     static bool is_running = true;
+    static ecs::scene* scene = NULL;
     static float deltatime, last_tick;
 
     FUSE_API bool on_quit(const quit_event&){
         return is_running = false;
+    }
+
+    FUSE_INLINE bool on_key(const keydown_event& e){
+        if(e.key == SDL_SCANCODE_R){
+            // scene->deserialize(config.scene);
+            scene->restart();
+        }
+        return false;
     }
     
     FUSE_INLINE void compute_deltatime(){
@@ -19,8 +29,12 @@ namespace fuse{
         }
         last_tick = get_ticks();
     }
-    FUSE_API void run_application(const app_config& config){
-        last_tick = get_ticks();
+    FUSE_API void run_application(const app_config& cfg){
+        // last_tick = get_ticks();
+
+        // set config
+        config = cfg;
+
         //init SDL
         if(SDL_Init(SDL_INIT_EVERYTHING) < 0){
             FUSE_ERROR("%s", SDL_GetError);
@@ -60,16 +74,22 @@ namespace fuse{
             exit(EXIT_FAILURE);
         }
 
+        // register callbacks
         inputs::initialize(window);
-        inputs::get_dispatcher()->add_callback<quit_event>(on_quit);
+        // inputs::get_dispatcher()->add_callback<quit_event>(on_quit);
+        auto disp = inputs::get_dispatcher();
+        disp->add_callback<quit_event>(on_quit);
+        disp->add_callback<keydown_event>(on_key);
+
 
         //create & start scene
         auto scene = new ecs::scene(renderer);
         scene->start();
 
         scene->serialize("assets/scene.yaml");
+        // scene->deserialize(config.scene);
 
-        // last_tick = get_ticks();
+        last_tick = get_ticks();
 
         while(is_running){
             compute_deltatime();
